@@ -6,7 +6,8 @@ const Client = new discord.Client();
 
 // command related
 const regex = /[^\s]+/g;
-const commands =  new (require("./commands.js")());
+var commands = require("./commands.js");
+commands = new commands();
 
 Client.on('ready', () => {
   console.log(`Logged in as ${Client.user.tag}!`);

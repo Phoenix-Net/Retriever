@@ -1,7 +1,18 @@
 // This is the shittiest thing I have ever written in my whole entire life.
 
+const discord = require("discord.js");
+
 class commands {
     constructor() {}
+
+    async zoomies(message) {
+       const zoomiesembed = new discord.MessageEmbed()
+        .setColor('#0099ff')
+        .setTitle('Gotta go fast! 🐕💨')
+        .setImage('https://cdn.hornyfur.com/6vDf.gif')
+
+        message.reply(zoomiesembed)
+    }
 
     async ball(message) {
         const botMessage = await message.reply("There it is! Go get it boy!");
