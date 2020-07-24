@@ -10,12 +10,12 @@ const regex = /[^\s]+/g;
 
 // ex. from Discord.JS
 // Create an event listener for messages
-client.on('message', message => {
+Client.on('message', message => {
     // If the message is "ping"
     if (message.content === 'ping') {
       // Send "pong" to the same channel
       message.channel.send('pong');
     }
-  });
+});
 
-client.login(config.token);
+Client.login(config.token);
