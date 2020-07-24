@@ -6,20 +6,11 @@ const Client = new discord.Client();
 
 // command related
 const regex = /[^\s]+/g;
+const commands =  new (require("./commands.js")());
 
 Client.on('ready', () => {
   console.log(`Logged in as ${Client.user.tag}!`);
   Client.user.setActivity('With balls ⚾', { type: 'PLAYING' })
-});
-
-// ex. from Discord.JS
-// Create an event listener for messages
-Client.on('message', message => {
-    // If the message is "ping"
-    if (message.content === 'ping') {
-      // Send "pong" to the same channel
-      message.channel.send('pong');
-    }
 });
 
 // Testing with prefix
@@ -32,32 +23,10 @@ Client.on('message', async message => {
 
   const commandAndArgs = cmd.match(regex);
   const command = commandAndArgs.shift().toLowerCase();
-  switch (command) {
-    case "ball":
-      const botMessage = await message.reply("There it is! Go get it boy!");
-      botMessage.react("🎾");
 
-      const fetched = await (new Promise(function(s) {
-      const filter = (reaction, user) => user.id === message.author.id && reaction.emoji.name === "🎾"
-      const collector = botMessage.createReactionCollector(filter, {time:30000})
-
-      collector.on("collect", reaction => {
-          // check your reaction thing
-          if (reaction.emoji.name != "🎾" || !reaction.users.cache.get(message.author.id)) return;
-          s(true);
-      });
-
-      collector.on("end", () => s(false));
-      }));  
-
-      if (fetched) {
-          botMessage.edit("Goodboy, you got it!");
-      } else {
-          botMessage.edit("Awhh man, maybe next time you'll be able to get it!");
-      }
-    break;
+  if (commands[command]) {
+    commands[command](message);
   }
-  
-})
+});
 
 Client.login(config.token);
