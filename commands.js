@@ -113,12 +113,17 @@ class commands {
         }
     }
 
-    async arrest(message) {
-        const user = await message.mentions.users.first();
+    async arrest(message, args) {
         const channel = await message.channel;
-        const arrestmessage = await channel.send(`You\u0027re under arrest <@${user.id}>! Put your paws in the air!`, {files: ["https://cdn.discordapp.com/attachments/737409592233033768/737414396095102989/shepranger_2.jpg"]});
-        arrestmessage.react("👮‍♂️");
-        arrestmessage.react("🚓");
+
+        if(args.length < 1 || typeof args[0] !== 'object' || !args[0]) {
+            const arrestmessage = await channel.send(`Invalid command usage!`);
+        } else {
+            const user = args[0];
+            const arrestmessage = await channel.send(`You\u0027re under arrest <@${user.id}>! Put your paws in the air!`, {files: ["https://cdn.discordapp.com/attachments/737409592233033768/737414396095102989/shepranger_2.jpg"]});
+            arrestmessage.react("👮‍♂️");
+            arrestmessage.react("🚓");
+        }
     }
 }
 
