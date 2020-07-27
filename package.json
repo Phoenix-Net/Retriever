@@ -1,0 +1,26 @@
+{
+  "name": "retriever",
+  "version": "1.0.0",
+  "description": "Discord Bot for funny dog jokes. Definitely a home-run type project right here.",
+  "main": "retriever.js",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "start": "nodemon retriever.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Phoenix-Net/Retriever.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Phoenix-Net/Retriever/issues"
+  },
+  "homepage": "https://github.com/Phoenix-Net/Retriever#readme"
+}
