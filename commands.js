@@ -1,6 +1,7 @@
 // This is the shittiest thing I have ever written in my whole entire life.
 
 const discord = require("discord.js");
+const Client = new discord.Client();
 
 class commands {
     constructor() {}
@@ -23,8 +24,8 @@ class commands {
             .setColor('0099ff')
             .setTitle('Information')
             .addFields(
-                {name:'Commands:', value:'?about\n?help\n?ball\n?zoomies\n?bananaphone\n?brokendog\n?sowwy\n?what\n?pupachino', inline: true},
-                {name:'About Command:', value:'Displays information regarding Retriever.\nYou just ran that one silly!\nGo fetch!\nGotta go fast!\nBanana Phone!\nWe swear, you didn\u0027t break him.\nYou\u0027ve really upset him this time...\nWhat did you just say?\nMmm...', inline: true},
+                {name:'Commands:', value:'?about\n?help\n?ball\n?arrest\n?zoomies\n?bananaphone\n?brokendog\n?sowwy\n?what\n?pupachino\n?denied', inline: true},
+                {name:'About Command:', value:'Displays information regarding Retriever.\nYou just ran that one silly!\nGo fetch!\nOh no, it\u0027s the pawlice!\nGotta go fast!\nBanana Phone!\nWe swear, you didn\u0027t break him.\nYou\u0027ve really upset him this time...\nWhat did you just say?\nMmm...\nFor those "nope!" moments.', inline: true},
             )
             .setFooter('Have any suggestions? Contact us via email! admin@gsheps.net', 'https://cdn.discordapp.com/attachments/737409592233033768/737409763096395786/fetcherlogo.png')
             message.reply(helpembed)
@@ -80,6 +81,14 @@ class commands {
             message.reply(pupachinoembed)
     }
 
+    async denied(message) {
+        const deniedembed = new discord.MessageEmbed()
+            .setColor('#990000')
+            .setTitle('*Ouch... that had to hurt...*')
+            .setImage('https://cdn.discordapp.com/attachments/737409592233033768/737413244746203247/ouch.gif')
+            message.reply(deniedembed)
+    }
+
     async ball(message) {
         const botMessage = await message.reply("There it is! Go get it boy!");
         botMessage.react("🎾");
@@ -102,6 +111,14 @@ class commands {
         } else {
             botMessage.edit("Awhh man, maybe next time you'll be able to get it!");
         }
+    }
+
+    async arrest(message) {
+        const user = await message.mentions.users.first();
+        const channel = await message.channel;
+        const arrestmessage = await channel.send(`You\u0027re under arrest <@${user.id}>! Put your paws in the air!`, {files: ["https://cdn.discordapp.com/attachments/737409592233033768/737414396095102989/shepranger_2.jpg"]});
+        arrestmessage.react("👮‍♂️");
+        arrestmessage.react("🚓");
     }
 }
 
