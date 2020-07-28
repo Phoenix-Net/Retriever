@@ -12,6 +12,7 @@ class commands {
         const aboutembed = new discord.MessageEmbed()
          .setColor('#0099ff')
          .setTitle('About Retriever')
+         .setURL('https://retriever.gsheps.net/')
          .addFields(
             { name: 'What is Retriever?', value: 'Retriever is a Discord bot written purely for entertainment value, based on dog jokes.'},
             { name: 'What can it do?', value: 'Well, that depends on how you interpret how Retriever makes jokes!\nIf you enjoy dog jokes as much as we do, then we guarentee you\u0027ll enjoy him as much as we do!\n\nFor further information regarding commands, please see ``?help.``'},
