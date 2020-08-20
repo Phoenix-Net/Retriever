@@ -5,7 +5,7 @@ const config = require("./config.json");
 const Client = new discord.Client();
 const CmdParser = require('./commandParser').init(Client);
 
-const DogPhrases = [["To woofs!", "LISTENING"], ["With balls ⚾", "PLAYING"], ["The window", "WATCHING"], [`${discordServers} Discord servers`, "WATCHING"]];
+const DogPhrases = [[`${discordServers} Discord servers`, "WATCHING"], ["To woofs!", "LISTENING"], ["With balls ⚾", "PLAYING"], ["The window", "WATCHING"]];
 
 // command related
 const regex = /[^\s]+/g;
