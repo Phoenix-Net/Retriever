@@ -5,7 +5,7 @@ const config = require("./config.json");
 const Client = new discord.Client();
 const CmdParser = require('./commandParser').init(Client);
 
-
+const DogPhrases = [[`${discordServers} Discord servers`, "WATCHING"], ["To woofs!", "LISTENING"], ["With balls ⚾", "PLAYING"], ["The window", "WATCHING"]];
 
 // command related
 const regex = /[^\s]+/g;
@@ -62,7 +62,7 @@ Client.on('message', async message => {
   }
 });
 
-const DogPhrases = [[`${discordServers} Discord servers`, "WATCHING"], ["To woofs!", "LISTENING"], ["With balls ⚾", "PLAYING"], ["The window", "WATCHING"]];
+
 
 // Every 1 hour change the activity :
 setInterval(() => {
@@ -71,5 +71,7 @@ setInterval(() => {
 
   Client.user.setActivity(currentActivity[0], { type: currentActivity[1] });
 }, 3.6e+6)
+
+
 
 Client.login(config.token);
