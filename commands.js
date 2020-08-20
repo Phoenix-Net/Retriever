@@ -30,8 +30,8 @@ class commands {
             .setColor('0099ff')
             .setTitle('Information')
             .addFields(
-                {name:'Commands:', value:'?about\n?help\n?ball\n?arrest\n?happybirthday\n?nudge\n?zoomies\n?bananaphone\n?brokendog\n?sowwy\n?what\n?pupachino\n?denied\n?oof\n?toofers\n?holyheck\n?boorf\n?plsno\n?heck\n?deletdis\n?headspin\n?stretch\n?present\n?ballz', inline: true},
-                {name:'About Command:', value:'Displays information regarding Retriever.\nYou just ran that one silly!\nGo fetch!\nOh no, it\u0027s the pawlice!\nWish someone a happy birthday! 🎈\nNudge someone like it\u0027s 2005 again. 👉\nGotta go fast!\nBanana Phone!\nWe swear, you didn\u0027t break him.\nYou\u0027ve really upset him this time...\nWhat did you just say?\nMmm...\nFor those "nope!" moments.\nOuch... That\u0027s gotta hurt...\nBrush them toofers!\nDid you just see that?\nDon\u0027t mess with fire hydrants.\nNo means no!\nGet hecked.\nDelet Dis, Now.\nOh heck 😵\nStretchies!\nHow dogs worship. 😤\nTennisballs... 🎾', inline: true},
+                {name:'Commands:', value:'?about\n?help\n?ball\n?arrest\n?happybirthday\n?nudge\n?zoomies\n?bananaphone\n?brokendog\n?sowwy\n?what\n?pupachino\n?denied\n?oof\n?toofers\n?holyheck\n?boorf\n?plsno\n?heck\n?deletdis\n?headspin\n?stretch\n?present\n?ballz\n?invite', inline: true},
+                {name:'About Command:', value:'Displays information regarding Retriever.\nYou just ran that one silly!\nGo fetch!\nOh no, it\u0027s the pawlice!\nWish someone a happy birthday! 🎈\nNudge someone like it\u0027s 2005 again. 👉\nGotta go fast!\nBanana Phone!\nWe swear, you didn\u0027t break him.\nYou\u0027ve really upset him this time...\nWhat did you just say?\nMmm...\nFor those "nope!" moments.\nOuch... That\u0027s gotta hurt...\nBrush them toofers!\nDid you just see that?\nDon\u0027t mess with fire hydrants.\nNo means no!\nGet hecked.\nDelet Dis, Now.\nOh heck 😵\nStretchies!\nHow dogs worship. 😤\nTennisballs... 🎾\nGet an invite link to bring Retriever to your server!', inline: true},
             )
             .setFooter('Have any suggestions? Contact us via email! admin@gsheps.net', 'https://cdn.discordapp.com/attachments/737409592233033768/737409763096395786/fetcherlogo.png')
         channel.send(helpembed)
@@ -199,6 +199,17 @@ class commands {
             .setTitle('Mmm Tennisballs... 🎾')
             .setImage('https://cdn.discordapp.com/attachments/737409592233033768/737483821532053554/tennisballs.jpg')
         channel.send(ballzembed)
+    }
+
+    async invite(message) {
+        const channel = await message.channel;
+        const inviteembed = new discord.MessageEmbed()
+            .setColor('#0099ff')
+            .setTitle('Invite Retriever to your Discord guild!')
+            .addFields(
+                {name:'Invite Link:', value:'https://retriever.gsheps.net/invite'}
+            )
+        channel.send(inviteembed)
     }
 
     async ball(message) {
