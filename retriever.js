@@ -12,7 +12,7 @@ var commands = require("./commands.js");
 let currentActivity, discordServers;
 commands = new commands();
 
-var DogPhrases = [["server", "WATCHING"],["To woofs!", "LISTENING"], ["With balls ⚾", "PLAYING"], ["The window", "WATCHING"]];
+var DogPhrases = [["server", "WATCHING"],["To Woofs!", "LISTENING"], ["With Balls ⚾", "PLAYING"], ["The Window", "WATCHING"]];
 function getRandom(num) {
   return Math.floor(Math.random() * Math.floor(num));
 }
@@ -68,5 +68,7 @@ setInterval(() => {
 
   Client.user.setActivity(currentActivity[0], { type: currentActivity[1] });
 }, 3.6e+6)
+
+// 3.6e+6 Hour
 
 Client.login(config.token);
