@@ -1,4 +1,8 @@
 {
-    "token": "NzM2MjkxMjY4NjkwNDQ0Mzc5.Xxsqrg.hRvfACDHWp1xge7hUU7lvl_Pyyo",
-    "prefix": "?"
+    "token": "NzQ2MDk0ODI4MzM2NzA5Njk0.Xz7U9A.nZZHm9ywgSLYr6GzQOJGqERSFS4",
+    "prefix": "?",
+    "---":"---",
+    "tokens":"If you're doing testing, please use the test-token, DO NOT USE PUBLIC PERIOD.",
+    "public-LIVETOKEN":"NzM2MjkxMjY4NjkwNDQ0Mzc5.Xxsqrg.hRvfACDHWp1xge7hUU7lvl_Pyyo",
+    "testing-TESTBRANCHTOKEN":"NzQ2MDk0ODI4MzM2NzA5Njk0.Xz7U9A.nZZHm9ywgSLYr6GzQOJGqERSFS4"
 }
