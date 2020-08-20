@@ -206,6 +206,7 @@ class commands {
         const inviteembed = new discord.MessageEmbed()
             .setColor('#0099ff')
             .setTitle('Invite Retriever to your Discord guild!')
+            .setImage('https://cdn.discordapp.com/attachments/737409592233033768/746100806243188976/serverinvite-picture.png')
             .addFields(
                 {name:'Invite Link:', value:'https://retriever.gsheps.net/invite'}
             )
