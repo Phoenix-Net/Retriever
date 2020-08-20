@@ -5,8 +5,6 @@ const config = require("./config.json");
 const Client = new discord.Client();
 const CmdParser = require('./commandParser').init(Client);
 
-const DogPhrases = [[`${discordServers} Discord servers`, "WATCHING"], ["To woofs!", "LISTENING"], ["With balls ⚾", "PLAYING"], ["The window", "WATCHING"]];
-
 // command related
 const regex = /[^\s]+/g;
 
@@ -14,6 +12,7 @@ var commands = require("./commands.js");
 let currentActivity, discordServers;
 commands = new commands();
 
+var DogPhrases = [["server", "WATCHING"],["To woofs!", "LISTENING"], ["With balls ⚾", "PLAYING"], ["The window", "WATCHING"]];
 function getRandom(num) {
   return Math.floor(Math.random() * Math.floor(num));
 }
@@ -22,15 +21,16 @@ Client.on('ready', () => {
   console.log(`Logged in as ${Client.user.tag}!`);
 
   currentActivity = DogPhrases[getRandom(DogPhrases.length)];
-  console.log(`Selected ${currentActivity[0]} as the activity!`);
+  discordServers = Object.keys(Client.guilds).length;
 
+  DogPhrases[0][0] = `${discordServers} servers.`;
   Client.user.setActivity(currentActivity[0], { type: currentActivity[1] });
-  discordServers = Object.keys(Client.guilds).length
 });
 
 // on discord join'
 Client.on("guildCreate", () => {
-  discordServers = Object.keys(Client.guilds).length
+  discordServers = Object.keys(Client.guilds).length;
+  DogPhrases[0][0] = `${discordServers} servers.`;
 });
 
 // Testing with prefix
@@ -62,16 +62,11 @@ Client.on('message', async message => {
   }
 });
 
-
-
 // Every 1 hour change the activity :
 setInterval(() => {
   currentActivity = DogPhrases[getRandom(DogPhrases.length)];
-  console.log(`Selected ${currentActivity[0]} as the activity!`);
 
   Client.user.setActivity(currentActivity[0], { type: currentActivity[1] });
 }, 3.6e+6)
-
-
 
 Client.login(config.token);
