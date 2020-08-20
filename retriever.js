@@ -24,12 +24,12 @@ Client.on('ready', () => {
   currentActivity = DogPhrases[getRandom(DogPhrases.length)];
   console.log(`Selected ${currentActivity[0]} as the activity!`);
 
-  Client.user.setActivity(currentActivity[0] + ` | ${Client.guilds.cache.length} Discord Servers.`, { type: currentActivity[1] });
+  Client.user.setActivity(currentActivity[0] + ` | ${Client.guilds.length} Discord Servers.`, { type: currentActivity[1] });
 });
 
 // on discord join'
 Client.on("guildCreate", () => {
-    Client.user.setActivity(currentActivity[0] + ` | ${Client.guilds.cache.length} Discord Servers.`, { type: currentActivity[1] });
+    Client.user.setActivity(currentActivity[0] + ` | ${Client.guilds.length} Discord Servers.`, { type: currentActivity[1] });
 });
 
 // Testing with prefix
@@ -66,7 +66,7 @@ setInterval(() => {
   currentActivity = DogPhrases[getRandom(DogPhrases.length)];
   console.log(`Selected ${currentActivity[0]} as the activity!`);
 
-  Client.user.setActivity(currentActivity[0] + ` | ${Client.guilds.cache.length} Discord Servers.`, { type: currentActivity[1] });
+  Client.user.setActivity(currentActivity[0] + ` | ${Client.guilds.length} Discord Servers.`, { type: currentActivity[1] });
 }, 3.6e+6)
 
 Client.login(config.token);
